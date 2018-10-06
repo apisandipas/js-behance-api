@@ -1,0 +1,14 @@
+.App {
+  margin : 0 auto;
+  max-width: 800px;
+}
+
+.App-nav {
+  /* border: 1px solid red; */
+  padding: 1rem 0;
+  margin-bottom: 30px;
+}
+
+.App-nav a {
+  text-decoration: none;
+}
