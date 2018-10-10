@@ -1,16 +1,21 @@
 .SearchPage {
   --button-width: 80px;
+  --button-background: var(--blue);
 }
 
-.SearchPage input[type='text']{
+.SearchPage input[type='text'] {
   padding: 1rem;
   width: calc(100% - var(--button-width));
   margin-bottom: 2rem;
 }
 
-.SearchPage button{
-  padding: 1rem;
+.SearchPage button {
+  padding: 1rem 0.5rem;
   width: var(--button-width);
   color: #fff;
-  background: #1041fb;
+  background: var(--button-background);
+}
+
+.SearchPage .Results {
+  margin-bottom: 4rem;
 }

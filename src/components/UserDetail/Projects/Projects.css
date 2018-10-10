@@ -1,0 +1,42 @@
+.Projects {
+  margin-bottom: 2rem;
+  background: #fff;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Projects.loading {
+  flex-direction: row;
+}
+
+.Projects header {
+  padding: 1rem;
+  color: var(--blue);
+}
+
+.Projects h2 {
+  margin: 0
+}
+
+.Projects-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.Projects-list-item {
+  display: flex;
+  align-items: center;
+  color: var(--blue);
+  text-decoration: none;
+  transition: 200ms all ease-in;
+}
+
+.Projects-list-item:hover {
+  color: #fff;
+  background: var(--blue);
+}
+
+.Projects-list-item img {
+  margin-right: 1rem;
+}

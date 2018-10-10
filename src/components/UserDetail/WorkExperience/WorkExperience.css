@@ -1,0 +1,24 @@
+.WorkExperience {
+  margin-bottom: 2rem;
+  background: #fff;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.WorkExperience.loading {
+  flex-direction: row;
+}
+
+.WorkExperience header {
+  padding: 1rem;
+  color: var(--blue);
+}
+
+.WorkExperience h2 {
+  margin: 0
+}
+
+.WorkExperience-list-item {
+  padding: 1rem;
+}

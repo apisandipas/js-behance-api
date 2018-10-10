@@ -1,0 +1,25 @@
+.Following {
+  margin-bottom: 2rem;
+  background: #fff;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Following .loading {
+  flex-direction: row;
+}
+
+.Following header {
+  padding: 1rem;
+  color: var(--blue);
+}
+
+.Following h2 {
+  margin: 0
+}
+
+.Following-list {
+  display: flex;
+  flex-wrap: wrap;
+}

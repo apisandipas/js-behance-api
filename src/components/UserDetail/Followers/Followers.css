@@ -1,0 +1,25 @@
+.Followers {
+  margin-bottom: 2rem;
+  background: #fff;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Followers .loading {
+  flex-direction: row;
+}
+
+.Followers header {
+  padding: 1rem;
+  color: var(--blue);
+}
+
+.Followers h2 {
+  margin: 0
+}
+
+.Followers-list {
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,28 @@
+.Results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
+.Result {
+  text-decoration: none;
+  color: var(--blue);
+  background: white;
+  height: 50px;
+  transition: 200ms all ease-in;
+}
+
+.Result:hover {
+  color: white;
+  background: var(--blue);
+}
+
+.Result > div {
+  border: 1px solid var(--blue);
+  display: flex;
+  align-items: center;
+}
+
+.Result-content {
+  margin: 0 1rem;
+}

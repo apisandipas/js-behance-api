@@ -1,0 +1,25 @@
+.Profile {
+  background: #fff;
+  color: var(--blue);
+  height: 230px;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.Profile-content {
+  padding: 1rem;
+  width: calc(100% - 230px);
+}
+
+.Profile-state-table {
+  text-align: center;
+  width: 100%;
+}
+
+.Profile-state-table th {
+  font-weight: normal;
+}
+
+.Profile-state-table td {
+  font-weight: bold;
+}

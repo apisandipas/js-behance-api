@@ -4,11 +4,12 @@
 }
 
 .App-nav {
-  /* border: 1px solid red; */
   padding: 1rem 0;
   margin-bottom: 30px;
 }
 
 .App-nav a {
   text-decoration: none;
+  font-weight: bold;
+  color: var(--blue);
 }
