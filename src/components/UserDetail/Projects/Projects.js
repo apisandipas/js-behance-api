@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import qs from 'query-string'
 import axios from 'axios-jsonp-pro'
 import { clientID } from '../../../constants'
@@ -14,7 +15,7 @@ class Projects extends Component {
   }
 
   componentDidMount = async () => {
-    const query = qs.parse(window.location.search)
+    const query = qs.parse(this.props.location.search)
     this.setState({ isLoading: true })
     try {
       const url = `https://api.behance.net/v2/users/${query.user}/projects?client_id=${clientID}`
@@ -59,4 +60,4 @@ class Projects extends Component {
   }
 }
 
-export default Projects
+export default withRouter(Projects)
