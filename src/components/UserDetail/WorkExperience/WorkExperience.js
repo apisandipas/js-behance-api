@@ -48,7 +48,6 @@ class WorkExperience extends Component {
           {workExperience.length === 0 && <div className="WorkExperience-list-item">No Work Experience Provided</div>}
           {workExperience.map((experience) => {
             const { start_date, end_date, position, organization, location } = experience
-            console.log('experience', experience)
             return (
               <div className="WorkExperience-list-item" key={organization}>
                 <strong>{position}</strong> at <strong>{organization}</strong> in {location} <br/>

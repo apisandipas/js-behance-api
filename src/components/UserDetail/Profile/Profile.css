@@ -1,9 +1,13 @@
 .Profile {
   background: #fff;
   color: var(--blue);
-  height: 230px;
+
   display: flex;
   margin-bottom: 2rem;
+}
+
+.Profile.loading {
+  height: 230px;
 }
 
 .Profile-content {

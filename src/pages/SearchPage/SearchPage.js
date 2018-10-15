@@ -6,7 +6,6 @@ import { clientID } from '../../constants'
 
 import './SearchPage.css'
 
-
 class SearchPage extends Component {
 
   state = {
@@ -48,8 +47,9 @@ class SearchPage extends Component {
             placeholder="Search..."
             value={this.state.query}
             onChange={this.handleChange}
+            data-testid="search-page-input"
           />
-          <button>Search</button>
+          <button data-testid="search-page-submit">Search</button>
         </form>
 
         {isLoading && (<Loader />)}

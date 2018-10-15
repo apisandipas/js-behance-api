@@ -33,7 +33,7 @@ class Profile extends Component {
 
     if (isLoading) {
       return (
-        <div className="Profile">
+        <div className="Profile loading">
           <Loader />
         </div>
       )
