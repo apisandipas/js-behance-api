@@ -2,6 +2,10 @@
 
 A simple user-search interface utilizing the Behance JSON API. It's build on top of React, React Router, and an Axios-based library that allows for simple JSONP requests. Works best in newer browsers with support for CSS Grid, Flexbox and Custom Properties.
 
+## Developer Setup
+- First rum `yarn install` or `npm install`
+- Then run `npm start`
+
 ## Available Scripts
 
 In the project directory, you can run:
