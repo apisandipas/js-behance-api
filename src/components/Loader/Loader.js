@@ -5,7 +5,7 @@ import './Loader.css'
 const Loader = () => {
   return (
     <div className="Loader-container">
-      <div className="Loader"></div>
+      <div className="Loader" data-testid="loader"></div>
     </div>
   )
 }

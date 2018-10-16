@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import axios from 'axios-jsonp-pro'
 import qs from 'query-string'
 import { clientID } from '../../../constants'
@@ -9,13 +10,12 @@ import './WorkExperience.css'
 class WorkExperience extends Component {
 
   state = {
-    isLoading: false,
+    isLoading: true,
     workExperience: []
   }
 
   componentDidMount = async () => {
-    const query = qs.parse(window.location.search)
-    this.setState({ isLoading: true })
+    const query = qs.parse(this.props.location.search)
     try {
       const url = `https://api.behance.net/v2/users/${query.user}/work_experience?client_id=${clientID}`
       const response = await axios.jsonp(url)
@@ -44,7 +44,7 @@ class WorkExperience extends Component {
         <header>
           <h2>Work Experience</h2>
         </header>
-        <section className="WorkExperience-list">
+        <section className="WorkExperience-list" data-testid="workexperience-list">
           {workExperience.length === 0 && <div className="WorkExperience-list-item">No Work Experience Provided</div>}
           {workExperience.map((experience) => {
             const { start_date, end_date, position, organization, location } = experience
@@ -61,4 +61,4 @@ class WorkExperience extends Component {
   }
 }
 
-export default WorkExperience
+export default withRouter(WorkExperience)

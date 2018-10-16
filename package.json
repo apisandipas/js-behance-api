@@ -27,6 +27,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "history": "^4.7.2",
     "react-testing-library": "^5.2.0"
   }
 }

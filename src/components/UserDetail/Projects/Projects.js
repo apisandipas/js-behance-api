@@ -10,13 +10,12 @@ import './Projects.css'
 class Projects extends Component {
 
   state = {
-    isLoading: false,
+    isLoading: true,
     projects: []
   }
 
   componentDidMount = async () => {
     const query = qs.parse(this.props.location.search)
-    this.setState({ isLoading: true })
     try {
       const url = `https://api.behance.net/v2/users/${query.user}/projects?client_id=${clientID}`
       const response = await axios.jsonp(url)
@@ -45,12 +44,13 @@ class Projects extends Component {
         <header>
           <h2>Projects</h2>
         </header>
-        <section className="Projects-list">
+        <section className="Projects-list" data-testid="projects-list">
           {projects.length && projects.map((project) => {
+            const { url, id, name, covers } = project
             return (
-              <a href={project.url} key={project.id} target="_blank" rel="noopener noreferrer" className="Projects-list-item">
-                <img src={project.covers['115']} alt={project.name}/>
-                {project.name}
+              <a href={url} key={id} target="_blank" rel="noopener noreferrer" className="Projects-list-item">
+                <img src={covers['115']} alt={name}/>
+                {name}
               </a>
             )
           })}

@@ -16,10 +16,8 @@ describe('<SearchPage />',  () => {
         <SearchPage />
       </MemoryRouter>
     )
-    const input = getByTestId('search-page-input')
-    const button = getByTestId('search-page-submit')
-    expect(input).toBeTruthy()
-    expect(button).toBeTruthy()
+    expect(getByTestId('search-page-input')).toBeTruthy()
+    expect(getByTestId('search-page-submit')).toBeTruthy()
   })
 
   it('loads search results when button is clicked', async () => {

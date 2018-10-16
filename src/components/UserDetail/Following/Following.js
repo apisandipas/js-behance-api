@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import axios from 'axios-jsonp-pro'
 import qs from 'query-string'
 import { clientID } from '../../../constants'
@@ -7,14 +8,14 @@ import Loader from '../../Loader/Loader'
 import './Following.css'
 
 class Following extends Component {
+
   state = {
-    isLoading: false,
+    isLoading: true,
     following: []
   }
 
   componentDidMount = async () => {
-    const query = qs.parse(window.location.search)
-    this.setState({ isLoading: true })
+    const query = qs.parse(this.props.location.search)
     try {
       const url = `https://api.behance.net/v2/users/${query.user}/following?client_id=${clientID}`
       const response = await axios.jsonp(url)
@@ -43,7 +44,7 @@ class Following extends Component {
         <header>
           <h2>Following</h2>
         </header>
-        <section className="Following-list">
+        <section className="Following-list" data-testid="following-list">
           {(following.length > 0) && following.map((followee) => {
             return (
               <a
@@ -63,4 +64,4 @@ class Following extends Component {
   }
 }
 
-export default Following
+export default withRouter(Following)

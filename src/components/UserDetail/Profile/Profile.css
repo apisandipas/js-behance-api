@@ -15,15 +15,16 @@
   width: calc(100% - 230px);
 }
 
-.Profile-state-table {
+.Profile-stat-table {
   text-align: center;
   width: 100%;
+  margin: 1rem 0;
 }
 
-.Profile-state-table th {
+.Profile-stat-table th {
   font-weight: normal;
 }
 
-.Profile-state-table td {
+.Profile-stat-table td {
   font-weight: bold;
 }

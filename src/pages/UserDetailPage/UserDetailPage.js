@@ -9,7 +9,7 @@ import './UserDetailPage.css'
 
 const UserDetailPage = () => {
   return (
-    <div className="UserDetailPage">
+    <div className="UserDetailPage" data-testid="detail-page">
       <Profile />
       <Projects />
       <WorkExperience />

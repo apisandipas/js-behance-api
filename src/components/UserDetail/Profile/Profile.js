@@ -1,6 +1,7 @@
 import React, { Component }  from 'react'
 import qs from 'query-string'
 import axios from 'axios-jsonp-pro'
+import { withRouter } from 'react-router-dom'
 import { clientID } from '../../../constants'
 import { titleCase } from '../../../helpers'
 import Loader from '../../Loader/Loader'
@@ -10,12 +11,11 @@ import './Profile.css'
 class Profile extends Component {
 
   state = {
-    isLoading: false
+    isLoading: true
   }
 
   componentDidMount = async () => {
-    const query = qs.parse(window.location.search)
-    this.setState({ isLoading: true })
+    const query = qs.parse(this.props.location.search)
     try {
       const url = `https://api.behance.net/v2/users/${query.user}?client_id=${clientID}`
       const response = await axios.jsonp(url)
@@ -40,16 +40,17 @@ class Profile extends Component {
     }
 
     if (user) {
-      const statTitle = Object.keys(user.stats)
-      const statValues = Object.values(user.stats)
+      const { display_name, images, occupation, location, stats } = user
+      const statTitle = Object.keys(stats)
+      const statValues = Object.values(stats)
       return(
         <div className="Profile">
-          <img src={user.images['230']} alt={user.display_name} />
-          <div className="Profile-content">
-            Name: <strong>{user.display_name}</strong> <br/>
-            Job: <strong>{user.occupation}</strong> <br/>
-            Location: <strong>{user.location}</strong>
-            <table style={{margin: '1rem 0'}} className="Profile-state-table">
+          <img src={images['230']} alt={display_name} />
+          <div className="Profile-content" data-testid="profile-content">
+            Name: <strong>{display_name}</strong> <br/>
+            Job: <strong>{occupation}</strong> <br/>
+            Location: <strong>{location}</strong>
+            <table className="Profile-stat-table">
               <thead>
                 <tr>
                   {statTitle.map((title) => {
@@ -74,4 +75,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+export default withRouter(Profile)
