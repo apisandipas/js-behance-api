@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="App" data-testid="app">
           <nav className="App-nav">
             <Link to="/">BehanceUserSearch</Link>
           </nav>
