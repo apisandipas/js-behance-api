@@ -22,8 +22,6 @@ const user = {
   username: 'bparonto'
 }
 
-afterEach(cleanup)
-
 describe('<Following />', () => {
   it('renders', async () => {
 
